@@ -248,7 +248,7 @@ SDL_ResampleAudio(const int chans, const int inrate, const int outrate,
                 const int srcframe = srcindex + 1 + j;
                 /* !!! FIXME: we can bubble this conditional out of here by doing a post loop. */
                 const float insample = (srcframe >= inframes) ? rpadding[((srcframe - inframes) * chans) + chan] : inbuf[(srcframe * chans) + chan];
-                outsample += (float)(insample * (ResamplerFilter[filterindex2 + jsamples] + (interpolation2 * ResamplerFilterDifference[filterindex2 + jsamples])));
+                outsample += (float) (insample * (ResamplerFilter[filterindex2 + jsamples] + (interpolation2 * ResamplerFilterDifference[filterindex2 + jsamples])));
             }
 
             *(dst++) = outsample;
